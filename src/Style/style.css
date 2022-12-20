@@ -35,15 +35,17 @@ body {
   text-align: center;
   margin: 10px;
   color: white;
+  border-radius: 10px;
 }
-.display-ui .display-search-geo .search-item {
-  padding: 5px;
+.display-ui .display-search-geo .display-item {
+  padding: 3px;
 }
-.display-ui .display-search-geo .search-item p {
-  margin: 0;
-}
-.display-ui .display-search-geo .search-item:hover {
-  background-color: #34495e;
+.display-ui .display-search-geo .display-item:hover {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
 }
 
 @media screen and (max-width: 760px) {

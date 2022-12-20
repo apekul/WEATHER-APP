@@ -1,12 +1,14 @@
-import React from "react";
-// import { api } from "./API";
-import { DisplayUI } from "./Components/DisplayUI";
+import React, { useState } from "react";
+import { SearchBar } from "./Components/SearchBar";
 import "./Style/style.css";
 
 function App() {
+  const [currentWeather, setCurrentWeather] = useState({});
+
   return (
     <div className="App">
-      <DisplayUI />
+      <SearchBar setCurrentWeather={setCurrentWeather} />
+      {console.log(currentWeather)}
     </div>
   );
 }
