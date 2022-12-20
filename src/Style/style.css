@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: #ecf0f1;
+  font-size: 25px;
+}
+
+.display-ui {
+  background: #2980b9;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.display-ui input {
+  width: 80%;
+  max-width: 500px;
+  margin-top: 10px;
+  padding: 20px;
+  border: 0;
+}
+.display-ui .display-search-geo {
+  background: #2c3e50;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+}
+.display-ui .display-search-geo .search-item {
+  padding: 5px;
+}
+.display-ui .display-search-geo .search-item p {
+  margin: 0;
+}
+.display-ui .display-search-geo .search-item:hover {
+  background-color: #34495e;
+}
+
+@media screen and (max-width: 760px) {
+  .display-ui {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
