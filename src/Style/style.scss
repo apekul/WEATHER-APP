@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
 }
 
 .App{
@@ -18,34 +19,81 @@ body{
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     flex-direction: column;
+    position: relative;
 
-    input{
+    .group-relative{
+        position:relative;
         width: 80%;
         max-width: 500px;
         margin-top: 10px;
-        padding: 20px;
-        border: 0;
+        margin-right: 20px;
     }
+
+    input{
+        height:50px;
+        width: 100%;
+        padding-left: 20px;
+        border-radius: 7px;
+        border:none;
+        outline:none;
+    }
+
+    input:not(:placeholder-shown) {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    button{
+        position:absolute;
+        right: 0px;
+        top: 13px;
+        border:none;
+        border-radius:100%;
+        outline:none;
+        text-align:center;
+        padding:2px;
+        background: #ecf0f1;
+        cursor:pointer;
+    }
+    .material-symbols-outlined:hover{
+        background: #bdc3c7;
+    }
+
     .display-search-geo{
-        background: #2c3e50;
-        width: 80%;
-        max-width: 500px;
-        text-align: center;
-        margin: 10px;
-        color: white;
-        border-radius: 10px;
+        background: white;
+        width: calc(100% + 22px);
+        text-align: flex-start;
+        position: absolute;
+        top: 52px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+        
         .display-item{
             padding: 3px;
+            padding-bottom: 10px;
         }
+
+        .display-item-text{
+            padding-left: 15px;
+        }
+
         .display-item:hover{
             background-color: #bdc3c7;
-            color: #2c3e50;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 10px;
         }
+
+        .display-item:last-child:hover{
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        // .display-item:last-child > div:hover {
+        //     border-bottom-right-radius: 10px;
+        //     border-bottom-left-radius: 10px;
+        //     color:red;
+        // } 
     }
 }
 

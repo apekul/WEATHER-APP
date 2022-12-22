@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar setCurrentWeather={setCurrentWeather} />
-      {console.log(currentWeather)}
+      {console.log(currentWeather.name)}
     </div>
   );
 }
