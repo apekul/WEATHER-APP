@@ -19,7 +19,6 @@ body{
     margin: auto;
     display: flex;
     align-items: center;
-    // justify-content: flex-start;
     flex-direction: column;
     position: relative;
 
@@ -29,6 +28,18 @@ body{
         max-width: 500px;
         margin-top: 10px;
         margin-right: 20px;
+
+        .searchIcon{
+            position:absolute;
+            right: 0px;
+            top: 13px;
+            border:none;
+            border-radius:100%;
+            outline:none;
+            text-align:center;
+            padding:2px;
+            color: #95a5a6;
+        }
     }
 
     input{
@@ -45,7 +56,7 @@ body{
         border-bottom-right-radius: 0px;
     }
 
-    button{
+    .closeButton{
         position:absolute;
         right: 0px;
         top: 13px;
@@ -57,7 +68,8 @@ body{
         background: #ecf0f1;
         cursor:pointer;
     }
-    .material-symbols-outlined:hover{
+
+    .closeButton:hover{
         background: #bdc3c7;
     }
 
@@ -77,7 +89,14 @@ body{
         }
 
         .display-item-text{
+            display: flex;
+            align-items: center;
             padding-left: 15px;
+
+            p{
+                padding: 0;
+                margin: 0;
+            }
         }
 
         .display-item:hover{
@@ -88,12 +107,6 @@ body{
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-
-        // .display-item:last-child > div:hover {
-        //     border-bottom-right-radius: 10px;
-        //     border-bottom-left-radius: 10px;
-        //     color:red;
-        // } 
     }
 }
 

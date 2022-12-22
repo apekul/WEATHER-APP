@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cities from "../city.list.json";
 
-export const SearchBar = ({ setCurrentWeather }) => {
+export const SearchBar = ({ setCurrentCity, children }) => {
   const [citiesList, setCitiesList] = useState([]); // List of first 5 matching cities by name
   const [inputValue, setInputValue] = useState("");
   // const [inputFocus, setInputFocus] = useState(false); // Input focus state
@@ -12,7 +12,7 @@ export const SearchBar = ({ setCurrentWeather }) => {
   };
 
   const Search = (v) => {
-    setCurrentWeather(v);
+    setCurrentCity(v);
     setInputValue("");
     setCitiesList([]);
   };
@@ -42,9 +42,10 @@ export const SearchBar = ({ setCurrentWeather }) => {
           onChange={onChange}
           placeholder="Search..."
         />
+        <div className="material-symbols-outlined searchIcon">search</div>
         {inputValue.length > 0 && (
           <button
-            className="material-symbols-outlined"
+            className="material-symbols-outlined closeButton"
             onClick={() => ClearInput()}
           >
             close
@@ -55,13 +56,16 @@ export const SearchBar = ({ setCurrentWeather }) => {
             ? citiesList.map((v, i) => (
                 <div className="display-item" key={i} onClick={() => Search(v)}>
                   <div className="display-item-text">
-                    {v.name}, {v.country}
+                    <p>
+                      {v.name}, {v.country}, {v.coord.lon},{v.coord.lan}
+                    </p>
                   </div>
                 </div>
               ))
             : ""}
         </div>
       </div>
+      {children}
     </div>
   );
 };
