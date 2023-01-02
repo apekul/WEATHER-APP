@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import cities from "../city.list.json";
+import { api } from "../API";
 
-export const SearchBar = ({ setCurrentCity, children }) => {
+// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+export const SearchBar = ({ children, setCurrentWeather }) => {
   const [citiesList, setCitiesList] = useState([]); // List of first 5 matching cities by name
   const [inputValue, setInputValue] = useState("");
   // const [inputFocus, setInputFocus] = useState(false); // Input focus state
@@ -12,7 +15,11 @@ export const SearchBar = ({ setCurrentCity, children }) => {
   };
 
   const Search = (v) => {
-    setCurrentCity(v);
+    fetch(
+      `${api.url}weather?lat=${v.coord.lat}&lon=${v.coord.lon}&appid=${api.key}&units=metric`
+    )
+      .then((res) => res.json())
+      .then((data) => setCurrentWeather(data));
     setInputValue("");
     setCitiesList([]);
   };
@@ -56,8 +63,11 @@ export const SearchBar = ({ setCurrentCity, children }) => {
             ? citiesList.map((v, i) => (
                 <div className="display-item" key={i} onClick={() => Search(v)}>
                   <div className="display-item-text">
+                    <span className="material-symbols-outlined mark-icon">
+                      location_on
+                    </span>
                     <p>
-                      {v.name}, {v.country}, {v.coord.lon},{v.coord.lan}
+                      {v.name}, {v.country}
                     </p>
                   </div>
                 </div>

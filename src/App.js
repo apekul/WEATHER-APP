@@ -1,17 +1,15 @@
 import React, { useState } from "react";
+import DisplayData from "./Components/DisplayData";
 import { SearchBar } from "./Components/SearchBar";
-import { FetchData } from "./Components/FetchData";
 import "./Style/style.css";
 
 function App() {
-  const [currentCity, setCurrentCity] = useState({});
-
+  const [currentWeather, setCurrentWeather] = useState({});
   return (
     <div className="App">
-      <SearchBar setCurrentCity={setCurrentCity}>
-        <FetchData currentCity={currentCity} />
+      <SearchBar setCurrentWeather={setCurrentWeather}>
+        <DisplayData currentWeather={currentWeather} />
       </SearchBar>
-      {/* {console.log(currentCity)} */}
     </div>
   );
 }
