@@ -43,14 +43,9 @@ function DisplayData({ currentWeather, forecastWeather }) {
               </div>
             </div>
           </div>
-          <Forecast forecastWeather={forecastWeather} />
+          {/* <Forecast forecastWeather={forecastWeather} /> */}
         </>
       )}
-      {/* {Object.keys(currentWeather).length <= 0 ? (
-        ""
-      ) : (
-        <Forecast forecastWeather={forecastWeather} />
-      )} */}
     </>
   );
 }
