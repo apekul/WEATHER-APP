@@ -5,10 +5,17 @@ import "./Style/style.css";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
+  const [forecastWeather, setForecastWeather] = useState({});
   return (
     <div className="App">
-      <SearchBar setCurrentWeather={setCurrentWeather}>
-        <DisplayData currentWeather={currentWeather} />
+      <SearchBar
+        setCurrentWeather={setCurrentWeather}
+        setForecastWeather={setForecastWeather}
+      >
+        <DisplayData
+          currentWeather={currentWeather}
+          forecastWeather={forecastWeather}
+        />
       </SearchBar>
     </div>
   );

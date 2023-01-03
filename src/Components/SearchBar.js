@@ -4,10 +4,13 @@ import { api } from "../API";
 
 // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
-export const SearchBar = ({ children, setCurrentWeather }) => {
+export const SearchBar = ({
+  children,
+  setCurrentWeather,
+  setForecastWeather,
+}) => {
   const [citiesList, setCitiesList] = useState([]); // List of first 5 matching cities by name
   const [inputValue, setInputValue] = useState("");
-  // const [inputFocus, setInputFocus] = useState(false); // Input focus state
 
   const ClearInput = () => {
     setInputValue("");
@@ -20,6 +23,12 @@ export const SearchBar = ({ children, setCurrentWeather }) => {
     )
       .then((res) => res.json())
       .then((data) => setCurrentWeather(data));
+
+    fetch(
+      `${api.url}forecast?lat=${v.coord.lat}&lon=${v.coord.lon}&appid=${api.key}`
+    )
+      .then((res) => res.json())
+      .then((data) => setForecastWeather(data));
     setInputValue("");
     setCitiesList([]);
   };

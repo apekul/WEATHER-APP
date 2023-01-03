@@ -1,3 +1,8 @@
+$base-color-n: #34495e;
+$base-color2-n: #2c3e50;
+$base-color-d: #3498db;
+$base-color2-d: rgba(93,52,236,1);
+
 body{
     margin: 0;
     padding: 0;
@@ -17,7 +22,7 @@ body{
 }
 
 .display-ui{
-    background: #2980b9;
+    background: $base-color-d;
     width: 80%;
     height: 100%;
     margin: auto;
@@ -124,9 +129,8 @@ body{
     // Display Style
     .current-weather-box{
         background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
-        width: auto;
-        max-width: 300px;
-        height: auto;
+        // background-image: linear-gradient( 109.6deg,  #34495e 11.2%, #2c3e50 100.2% );
+        width:10em;
         margin: 20px;
         padding: 20px;
         border-radius: 10px;
@@ -142,26 +146,37 @@ body{
             margin: 0;
         }
         .weather-icon{
-            height: auto;
-            max-width: 50%;
+            width: 5em;
         }
         .icon{
             color: white;
         }
         .current-weather-info{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
 
             #temperature{
             font-size: 2em;
-
             }
-
         }
+    }
 
+    // Forecast
+    .forecast-section{
+        background:red;
+        width: 100%;
+        height: auto;
+
+        .forecast-group{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: pink;
+            height: auto;
+            width: 100%;
+        }
     }
 }
-
 
 @media screen and (max-width: 760px){
     .display-ui{
