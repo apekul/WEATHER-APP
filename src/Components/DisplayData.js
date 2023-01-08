@@ -5,6 +5,7 @@ function DisplayData({ currentWeather, forecastWeather }) {
     let date = new Date();
     return date.toDateString();
   };
+
   return (
     <>
       {Object.keys(currentWeather).length <= 0 ? (
@@ -43,7 +44,7 @@ function DisplayData({ currentWeather, forecastWeather }) {
               </div>
             </div>
           </div>
-          {/* <Forecast forecastWeather={forecastWeather} /> */}
+          <Forecast forecastWeather={forecastWeather} />
         </>
       )}
     </>

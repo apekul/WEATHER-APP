@@ -6,6 +6,8 @@ import "./Style/style.css";
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
   const [forecastWeather, setForecastWeather] = useState({});
+
+  // const [Data, setData] = useState([]);
   return (
     <div className="App">
       <SearchBar

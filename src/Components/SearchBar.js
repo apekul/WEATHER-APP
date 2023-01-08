@@ -18,19 +18,22 @@ export const SearchBar = ({
   };
 
   const Search = (v) => {
-    fetch(
-      `${api.url}weather?lat=${v.coord.lat}&lon=${v.coord.lon}&appid=${api.key}&units=metric`
-    )
-      .then((res) => res.json())
-      .then((data) => setCurrentWeather(data));
-
-    fetch(
-      `${api.url}forecast?lat=${v.coord.lat}&lon=${v.coord.lon}&appid=${api.key}`
-    )
-      .then((res) => res.json())
-      .then((data) => setForecastWeather(data));
-    setInputValue("");
-    setCitiesList([]);
+    Promise.all([
+      fetch(
+        `${api.url}weather?lat=${v.coord.lat}&lon=${v.coord.lon}&appid=${api.key}&units=metric`
+      ),
+      fetch(
+        `${api.url}forecast?lat=${v.coord.lat}&lon=${v.coord.lon}&appid=${api.key}&units=metric`
+      ),
+    ])
+      .then(([resCurrent, resForecast]) =>
+        Promise.all([resCurrent.json(), resForecast.json()])
+      )
+      .then(([dataCurrent, dataForecast]) => {
+        setCurrentWeather(dataCurrent);
+        setForecastWeather(dataForecast);
+      });
+    ClearInput();
   };
 
   // Search for cities using user input function
