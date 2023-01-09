@@ -1,5 +1,5 @@
 import React from "react";
-import { Forecast } from "./Forecast";
+// import { Forecast } from "./Forecast";
 
 function DisplayData({ currentWeather, forecastWeather }) {
   let date = new Date();
