@@ -10,16 +10,17 @@ body{
     font-family: 'Hanken Grotesk', sans-serif;
 }
 
+p,h1,h2,h3,h4{
+    margin: 0;
+    padding: 0;
+}
+
 .App{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     font-size: 1.5em;
 }
 
-.flex-box{
-    display: flex;
-    align-items: center;
-}
 
 .display-ui{
     background: $base-color-d;
@@ -129,54 +130,81 @@ body{
     // Display Style
     .current-weather-box{
         background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
-        width:10em;
+        width: 40em;
+        max-width:70%;
+        height: auto;
         margin: 20px;
         padding: 20px;
         border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
+        display: grid;
+        grid-template: 10% repeat(2, 1fr) / repeat(3, 1fr) ;
         color: white;
 
+        .current-name-time{
+            grid-area: 1 / 2 span;
 
-        h3, p{
-            padding: 0;
-            margin: 0;
+            p{
+                font-size: 0.6em;
+            }
         }
-        .weather-icon{
-            width: 5em;
-        }
-        .icon{
-            color: white;
-        }
-        .current-weather-info{
+        .current-icon-temp{
+            grid-area: 2 / 1;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: flex-start;
+            
+            p{
+                font-size: 2em;
+                position: relative;
+                right: 40px;
+                margin-left: 10px;
+            }
+            .weather-icon{
+                max-width: 5em;
+                width: 100%;
+                position: relative;
+                right: 20px;
+            }
+        }
+        .current-info{
+            grid-area: 2 / 3;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            justify-content: center;
 
-            #temperature{
-            font-size: 2em;
+            span{
+                font-size: 1em;
+            }
+            p{
+                font-size: 0.8em;
+            }
+
+            .flex-center{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .current-forecast{
+            grid-area: 3 / 3 span;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: auto;
+            gap: 10px;
+
+            div{
+                // background-color: red;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-bottom: 20px;
             }
         }
     }
 
-    // Forecast
-    .forecast-section{
-        background: pink;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        align-items: center;
-
-        width: 100%;
-        height: auto;
-
-        .forecast-group{
-            background: green;
-            width: 100%;
-            display: flex;
-        }
-    }
 }
 
 @media screen and (max-width: 760px){
@@ -184,9 +212,9 @@ body{
         width: auto;
     }
 }
-@media screen and (max-width: 315px){
+@media screen and (max-width: 420px){
     .display-ui{
-        font-size: 0.6em;
+        font-size: 0.8em;
     }
     
 }
