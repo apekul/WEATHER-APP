@@ -1,5 +1,5 @@
 import React from "react";
-import { Forecast } from "./Forecast";
+// import { Forecast } from "./Forecast";
 
 function DisplayData({ currentWeather, forecastWeather }) {
   const time = () => {
@@ -9,9 +9,7 @@ function DisplayData({ currentWeather, forecastWeather }) {
     );
     return `${date.getFullYear()}-${arr[0]}-${arr[1]}`;
   };
-  let today = forecastWeather.list.filter(
-    (v) => v.dt_txt.split(" ")[0] === time()
-  );
+
   return (
     <>
       {Object.keys(currentWeather).length <= 0 ? (
