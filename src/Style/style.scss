@@ -11,7 +11,7 @@ body{
 }
 
 .App{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     font-size: 1.5em;
 }
@@ -129,7 +129,6 @@ body{
     // Display Style
     .current-weather-box{
         background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
-        // background-image: linear-gradient( 109.6deg,  #34495e 11.2%, #2c3e50 100.2% );
         width:10em;
         margin: 20px;
         padding: 20px;
@@ -163,17 +162,19 @@ body{
 
     // Forecast
     .forecast-section{
-        background:red;
+        background: pink;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-items: center;
+
         width: 100%;
         height: auto;
 
         .forecast-group{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: pink;
-            height: auto;
+            background: green;
             width: 100%;
+            display: flex;
         }
     }
 }

@@ -1,11 +1,17 @@
 import React from "react";
 import { Forecast } from "./Forecast";
+
 function DisplayData({ currentWeather, forecastWeather }) {
   const time = () => {
     let date = new Date();
-    return date.toDateString();
+    let arr = [date.getMonth() + 1, date.getDate()].map((v) =>
+      v.toString().length < 2 ? "0" + v : ""
+    );
+    return `${date.getFullYear()}-${arr[0]}-${arr[1]}`;
   };
-
+  let today = forecastWeather.list.filter(
+    (v) => v.dt_txt.split(" ")[0] === time()
+  );
   return (
     <>
       {Object.keys(currentWeather).length <= 0 ? (
@@ -25,7 +31,6 @@ function DisplayData({ currentWeather, forecastWeather }) {
             </div>
             <p>{currentWeather.weather[0].main}</p>
             <br />
-
             <div className="current-weather-info">
               <div style={{ justifyContent: "center", alignItems: "center" }}>
                 <div className="flex-box">
@@ -44,7 +49,7 @@ function DisplayData({ currentWeather, forecastWeather }) {
               </div>
             </div>
           </div>
-          <Forecast forecastWeather={forecastWeather} />
+          {/* <Forecast forecastWeather={forecastWeather} time={time()} /> */}
         </>
       )}
     </>
