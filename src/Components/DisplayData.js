@@ -12,6 +12,7 @@ function DisplayData({ currentWeather, forecastWeather }) {
   let today = forecastWeather.list.filter(
     (v) => v.dt_txt.split(" ")[0] === time()
   );
+  // test comment
   return (
     <>
       {Object.keys(currentWeather).length <= 0 ? (
