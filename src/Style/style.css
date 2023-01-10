@@ -14,10 +14,10 @@ p, h1, h2, h3, h4 {
   width: 100vw;
   height: 100vh;
   font-size: 1.5em;
+  background: #3498db;
 }
 
 .display-ui {
-  background: #3498db;
   width: 80%;
   height: 100%;
   margin: auto;
@@ -109,14 +109,14 @@ p, h1, h2, h3, h4 {
 }
 .display-ui .current-weather-box {
   background-image: linear-gradient(109.6deg, rgb(62, 161, 219) 11.2%, rgb(93, 52, 236) 100.2%);
-  width: 40em;
+  width: 30em;
   max-width: 70%;
   height: auto;
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
   display: grid;
-  grid-template: 10% repeat(2, 1fr)/repeat(3, 1fr);
+  grid-template: 10% 1fr 2fr/repeat(3, 1fr);
   color: white;
 }
 .display-ui .current-weather-box .current-name-time {
@@ -149,6 +149,7 @@ p, h1, h2, h3, h4 {
   align-items: flex-end;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .display-ui .current-weather-box .current-info span {
   font-size: 1em;
@@ -167,6 +168,7 @@ p, h1, h2, h3, h4 {
   align-items: center;
   justify-content: flex-start;
   overflow: auto;
+  overflow-y: hidden;
   gap: 10px;
 }
 .display-ui .current-weather-box .current-forecast div {

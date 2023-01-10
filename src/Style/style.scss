@@ -19,11 +19,13 @@ p,h1,h2,h3,h4{
     width: 100vw;
     height: 100vh;
     font-size: 1.5em;
+    background: $base-color-d;
+
 }
 
 
 .display-ui{
-    background: $base-color-d;
+    // background: $base-color-d;
     width: 80%;
     height: 100%;
     margin: auto;
@@ -130,14 +132,14 @@ p,h1,h2,h3,h4{
     // Display Style
     .current-weather-box{
         background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
-        width: 40em;
+        width: 30em;
         max-width:70%;
         height: auto;
         margin: 20px;
         padding: 20px;
         border-radius: 10px;
         display: grid;
-        grid-template: 10% repeat(2, 1fr) / repeat(3, 1fr) ;
+        grid-template: 10% 1fr 2fr / repeat(3, 1fr) ;
         color: white;
 
         .current-name-time{
@@ -172,6 +174,9 @@ p,h1,h2,h3,h4{
             align-items: flex-end;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 20px;
+            // background: red;
+
 
             span{
                 font-size: 1em;
@@ -192,6 +197,7 @@ p,h1,h2,h3,h4{
             align-items: center;
             justify-content: flex-start;
             overflow: auto;
+            overflow-y: hidden;
             gap: 10px;
 
             div{

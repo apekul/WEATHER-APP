@@ -1,5 +1,4 @@
 import React from "react";
-// import { Forecast } from "./Forecast";
 
 function DisplayData({ currentWeather, forecastWeather }) {
   let date = new Date();
@@ -27,10 +26,14 @@ function DisplayData({ currentWeather, forecastWeather }) {
               alt="weatherIcon"
               className="weather-icon"
             />
-            <p>{Math.ceil(currentWeather.main.temp)}°C</p>
+            <p>{Math.ceil(currentWeather.main.temp)}°</p>
           </div>
           <div className="current-info">
             <p>{currentWeather.weather[0].main}</p>
+            <p>
+              {Math.floor(currentWeather.main.temp_max)}°/{" "}
+              {Math.floor(currentWeather.main.temp_min)}°
+            </p>
             <div className="flex-center">
               <span className="material-symbols-outlined">air</span>
               <p>{Math.floor(currentWeather.wind.speed * 3.6)}km/h</p>
@@ -50,13 +53,17 @@ function DisplayData({ currentWeather, forecastWeather }) {
                     alt="weatherIcon"
                     className="weather-icon"
                   />
-                  <p>{Math.ceil(value.main.temp)}°C</p>
-                  <p>{value.main.humidity}%</p>
+                  <p>{Math.ceil(value.main.temp)}°</p>
+                  <div style={{ flexDirection: "row" }}>
+                    <span className="material-symbols-outlined">
+                      water_drop
+                    </span>
+                    <p>{value.main.humidity}%</p>
+                  </div>
                 </div>
               )
             )}
           </div>
-          {/* <Forecast forecastWeather={forecastWeather} time={time()} /> */}
         </div>
       )}
     </>
